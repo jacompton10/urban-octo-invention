@@ -1,0 +1,87 @@
+<title>Trig Identities Review</title>
+
+<p>Throughout this course, we will make use of several identities involving trig functions. An identity provides mathematicians with a way to algebraically manipulate an expression for the purpose of simplification. For example, since <m>\frac{1-\sqrt{3}}{1-\sqrt{3}}=1</m>, we can easily change rationalize the denominator in the fraction <me>\frac{1}{1+\sqrt{3}}=\frac{1}{1+\sqrt{3}}\cdot\frac{1-\sqrt{3}}{1-\sqrt{3}}=\frac{1-\sqrt{3}}{-2}.</me> </p>
+
+<p>When functions are involved, an identity is only <em>true</em> when the equality is true <em>for all input values</em>. An identity is <em>false</em> if there is even a single input value for which the equality is not true. Let's take a look at a few examples.</p>
+
+<cascade revealAll>
+<!-- <example boxed collapsible startOpen="false"> -->
+  <aside> <title>Example 1</title>
+  <p>A common <alert>mistaken</alert> identity is that <m>\sqrt{x^2} = x</m>. Sadly, this is only true when <m>x\geq 0</m> and is not true when <m>x< 0</m>. In Calculus we will be concerned with the entire real line and this creates a problem.</p>
+
+  <p>To understand why this is false, notice that if we use <m>x=-2</m>, <m>\sqrt{x^2}=\sqrt{(-2)^2} = </m> <answer>2</answer>. But this is not the same as the input <m>x=-2</m>. Because this equality failed when <m>x=-2</m>, we know that the identity is <answer inline><choice>True</choice><choice credit="1">False</choice></answer>. </p>
+
+  <p>Fortunately, there is a fix! The correct identity is <m>\sqrt{x^2} = |x|</m>.</p>
+
+  <p>And when the exponent/radical index are odd, there are no issues: <m>\sqrt[3]{x^3}=x</m> is a true identity.</p>  </aside>
+  <!-- </example> -->
+
+<aside><title>Example 2</title>
+  <p>As for trig functions, one of the most important and well-known identities is the <alert>Pythagorean Identity</alert>: <me>\sin^2(\theta)+\cos^2(\theta) = 1</me></p>
+
+  <p>This identity, as you might guess, comes from the Pythagorean Theorem. In fact, if you use the <m>x</m> and <m>y</m>-cooridnates of any point on the unit circle, you can easily verify this identity for many values of <m>\theta</m>. the fact that this identity is true for all values of <m>\theta</m> simply comes from the way that sine and cosine are defined.</p>
+
+  <p>Because of this identity, we can easily arrive at several other useful formulas by adding, subtracting, and dividing in the equation. The first one is done for you, and you can reveal hints for help on the rest if needed.</p>
+  <p>Tip: Type <m>\theta</m> by typing theta and exponents using the carat ^. Or use the keyboard in the bottom-right corner.</p>
+
+  <p><m>1-\cos^2(\theta)=\sin^2(\theta)</m></p>
+  <p><m>1-\sin^2(\theta)=</m><answer>cos^2(theta)</answer></p>
+  <p><m>\tan^2(\theta)+1= </m><answer>sec^2(theta)</answer></p> <hint>Try dividing both sides of the original equation by <m>\cos^2(\theta)</m>.</hint>
+  <p><m>1+\cot^2(\theta)=</m><answer>csc^2(theta)</answer></p>  <hint>Try dividing both sides of the original equation by <m>\sin^2(\theta)</m>.</hint>
+
+  </aside>
+
+<aside><title>Example 3</title>
+  <p>Now that you know the Pythagorean Identity and some of its relatives, let's take a look at a few ways this gets used - and some common mistakes!</p>
+
+  <p>First, you are unlikely to see <m>\sin^2(\theta)+\cos^2(\theta)</m> (which simplifies to 1!) as is. You may instead find <m>2\sin^2(\theta)+2\cos^2(\theta)</m>, which does not simplify to 1. Instead, by factoring the coefficient 2 we can make this </p>
+  <p sectionWideCheckWork showCorrectness colorAnswersSeparately >  <m>2\sin^2(\theta)+2\cos^2(\theta)=</m><answer>2</answer><m>(\sin^2(\theta)+\cos^2(\theta))=2(</m><answer>1</answer><m>)=</m><answer>2</answer>.</p>
+
+  <p>Likewise, we can simplify the expression <m>a\sin^2(\theta)+a\cos^2(\theta)</m>:</p>
+
+  <p sectionWideCheckWork showCorrectness colorAnswersSeparately>  <m>a\sin^2(\theta)+a\cos^2(\theta)=</m><answer>a</answer><m>(\sin^2(\theta)+\cos^2(\theta))=a(</m><answer>1</answer><m>)=</m><answer>a</answer>.</p>
+
+  <p>Try a few more using your hard work from Example 2 along with the factoring we just covered.</p>
+
+  <p><m>3-3\cos^2(\theta) =</m> <answer>3*sin^2(theta)</answer></p>
+  <p><m>10+10\cot^2(\theta) =</m> <answer>10*csc^2(theta)</answer></p>
+  <p><m>5\tan^2(\theta)+5 =</m> <answer>5*sec^2(theta)</answer></p>
+  <p><m>4\sec^2(\theta)-4\tan^2(\theta) =</m> <answer>4</answer></p>
+
+  <p><alert>Warning!</alert> These identities only work because sine and cosine have the same input angle/radian measure <m>\theta</m>. It does not matter <em>what</em> the input is, but they must match. As an example, <m>\sin^2(\theta)+\cos^2(3\theta)\neq 1</m>.</p>
+
+  <p>With some caution, you can still simplify using the Pythagorean Identity, even when you do not see <m>\theta</m>. Select each of the following identities that are true.
+  <answer matchPartial selectMultiple>
+    <label>Select all of the correct identities.</label>
+    <choice credit="1"><m>1-\cos^2(5\theta) = \sin^2(5\theta)</m></choice>
+    <choice><m>2\sec^2(3\theta)= 2+2\tan^2(\theta)</m></choice>
+    <choice credit="1"><m>10+10\cot^2(3y) =10\csc^2(3y)</m> </choice>
+    <choice credit="1"><m>\sin^2(9x-6)+\cos^2(9x-6) =1</m> </choice>
+    <choice><m>3\sin^2(x) = 1-3\cos^2(x)</m></choice>
+  </answer></p>
+</aside>
+  
+<aside> <title>Example 4</title>
+    <p> We will also need a few <alert>half-angle</alert> and <alert>double-angle formulas</alert>. Many of these come directly from the sum/difference formula for sine and cosine:
+    <me>\sin(\alpha\pm\beta) = \sin(\alpha)\cos(\beta)\pm\sin(\beta)\cos(\alpha)</me> <me>\cos(\alpha\pm\beta) = \cos(\alpha)\cos(\beta)\mp\sin(\alpha)\sin(\beta)</me></p>
+
+    <p>Use these to find the double-angle formulas:</p>
+
+    <p showCorrectness colorAnswersSeparately sectionWideCheckWork><m>\sin(2\theta) = \sin(\theta+\theta) = \sin(\theta)\cos(</m><answer>theta</answer><m>)</m><answer inline> <choice credit="1"> <m>+</m></choice><choice><m>-</m></choice></answer><m>\sin(\theta)\cos(</m><answer>theta</answer><m>)=2\sin(\theta)\cos(\theta) </m></p>
+
+  <p showCorrectness colorAnswersSeparately sectionWideCheckWork><m>\cos(2\theta) = \cos(\theta+\theta) = \cos(\theta)\cos(</m><answer>theta</answer><m>)</m><answer inline> <choice credit="1"> <m>-</m></choice><choice><m>+</m></choice></answer><m>\sin(\theta)\sin(</m><answer>theta</answer><m>)=\cos^2(\theta)-\sin^2(\theta) </m></p>  
+
+  <p>A bit of algebra also shows: <m>\cos(2\theta)=1-2\sin^2(\theta)=2\cos^2(\theta)-1</m></p>
+
+  <p>Using these identities, you can discover the half-angle formulas:  </p>
+
+  <p><me>\sin^2(2\theta) = \frac{1-\cos(\theta)}{2} \text{ and }\cos^2(\theta)=\frac{1+\cos(\theta)}{2}</me></p>
+
+  <p><alert>Warning! </alert>Notice that these formulas are <em>doubling</em> and <em>halving</em> the argument. The subsitution may not always have a <m>2\theta</m>. Check your understanding with these examples.</p>
+
+  <p><m>2\sin^2(6\theta) = 1-\cos(</m><answer>3*theta</answer><m>)</m></p>
+  <p><m>2\cos^2(\theta) = 1+\cos(</m><answer>theta/2</answer><m>)</m></p>
+  </aside>
+
+  
+  </cascade>

@@ -1,0 +1,117 @@
+<title>Unit Circle Review</title>
+  <p>The unit circle is the circle of radius 1 centered at the origin. We can use right triangles and the fact that the radius is 1 to find several points of interest on the unit circle using the Pythagorean Theorem.</p>
+  <aside><title>Example 1</title>
+    <p>Notice that the point <m>(\frac{\sqrt{3}}{2},a)</m> in the graph below can be joined to the origin and the <m>x</m>-axis to create a right triangle whose horizontal leg is of length <answer>sqrt(3)/2
+   </answer>, whose vertical leg is of length <m>a</m>, and whose hypotenuse has length <answer>1</answer>.
+   </p>
+
+  <p> Solving the equation <m>a^2+\left(\frac{\sqrt{3}}{2}\right)^2=(1)^2</m> for <m>a</m>, we find that <m>a=</m><answer name="a">0.5</answer>.    
+  </p>
+
+    <p>Once you know the coordinates of the points in Quadrant I, you can use symmetry to find the coordinates of the corresponding points in the other Quadrants.</p>
+    
+ <graph xmin="-1.75" ymin="-1.75" xmax="1.75" ymax="1.75" fixed >
+    <shortDescription>The unit circle with some missing coordinates.</shortDescription>
+    <circle name="C" center="(0,0)" radius="1"/>
+   <point name="P1" coords="(sqrt(3)/2,0.5)"><label><m>(\frac{\sqrt{3}}{2},a)</m></label></point>
+   <!-- <math format="latex">$a</math> -->
+   <point name="P2" coords="(sqrt(2)/2,sqrt(2)/2)"><label><m>(b,\frac{\sqrt{2}}{2})</m></label></point>
+   <!-- <math format="latex">$b</math> -->
+   <!-- <point name="P2" coords="(sqrt(2)/2,sqrt(2)/2)"><label><m>($b,\frac{\sqrt{2}}{2})</m></label></point> -->
+   <point name="P3" coords="(0.5,sqrt(3)/2)"><label><m>(\frac{1}{2},c)</m></label></point>
+   <point name="P4" coords="(-0.5,sqrt(3)/2)" labelPosition="upperleft"><label><m>(d,e)</m></label></point>
+   <point name="P5" coords="(-sqrt(3)/2,-0.5)" labelPosition="lowerleft"><label><m>(f,g)</m></label></point>
+      <lineSegment styleNumber="2" endpoints="(0,0) $P1"><label>1</label></lineSegment>
+  <lineSegment styleNumber="2" endpoints="(sqrt(3)/2,0) $P1"><label><m>a</m></label></lineSegment>
+  <lineSegment styleNumber="2" endpoints="(sqrt(3)/2,0) (0,0)" labelPosition="top"><label><m>\frac{\sqrt{3}}{2}</m></label></lineSegment>
+  </graph>
+    
+<p> Fill in the missing coordinates for the points on the unit circle above.<br></br>
+
+Tip: To type square roots and fractions like <m>\frac{\sqrt{2}}{2}</m>, type sqrt(2)/2, use fraction exponents (<m>(2^{1/2})/2</m>) or click the keyboard icon in the bottom-right corner.</p>
+    <p><answer name="b"><label><m>b=</m></label><award>sqrt(2)/2</award></answer></p>
+    <p><answer><label><m>c=</m></label><award>sqrt(3)/2</award></answer></p>
+    <p><m>(d,e)=</m><mathInput name="deCoords" forAnswer="$deAns" prefill="(,)"></mathInput></p>
+    <answer name="deAns"><award><when>$deCoords=(-0.5,sqrt(3)/2)</when></award></answer>
+    <p><m>(f,g)=</m><mathInput name="fgCoords" forAnswer="$fgAns" prefill="(,)"></mathInput></p>
+    <answer name="fgAns"><award><when>$fgCoords=(-sqrt(3)/2,-0.5)</when></award></answer> 
+
+
+
+
+     </aside>
+  
+
+<aside><title>Example 2</title>
+
+  <p>When connecting the points in the previous graph to the origin, we notice that the rays that are formed make angles of 30, 45, and 60 degrees with the <m>x</m>-axis. In radians, which we use in Calculus, these are <m>\frac{\pi}{6},\ \frac{\pi}{4},</m> and <m>\frac{\pi}{3}</m> radians respectively. I have gone ahead and done this for a few more radian measures. See if you can fill in the missing radian mesaures.</p>
+
+  <graph xmin="-1.75" ymin="-1.75" xmax="1.75" ymax="1.75" fixed >
+    <shortDescription>The unit circle with some missing coordinates.</shortDescription>
+    <circle name="C" center="(0,0)" radius="1"/>
+  <ray endpoint="(0,0)" direction="(sqrt(3)/2,.5)" styleNumber="2" labelPosition="upperRight"><label><m>\frac{\pi}{6}</m></label></ray>
+  <ray endpoint="(0,0)" through="(sqrt(2)/2,sqrt(2)/2)" styleNumber="2" labelPosition="lowerRight"><label><m>\frac{\pi}{4}</m></label></ray>
+  <ray endpoint="(0,0)" through="(.5,sqrt(3)/2)" styleNumber="2" labelPosition="lowerRight"><label><m>\frac{\pi}{3}</m></label></ray>
+  <ray endpoint="(0,0)" through="(-sqrt(3)/2,.5)" styleNumber="2" />
+  <ray endpoint="(0,0)" direction="(-sqrt(2)/2,sqrt(2)/2)" styleNumber="2"/>
+  <ray endpoint="(0,0)" direction="(-.5,sqrt(3)/2)" styleNumber="2"/>
+  <ray endpoint="(0,0)" direction="(0,1)" styleNumber="2"/>
+  <ray endpoint="(0,0)" direction="(-1,0)" styleNumber="2"/>
+  <ray endpoint="(0,0)" direction="(1,0)" styleNumber="2"/>
+
+
+  <label anchor="(1.5,.15)"><m>0</m></label>
+  <label anchor="(-.6,3sqrt(3)/4)"><m>\frac{2\pi}{3}</m></label>
+  <label anchor="(-.1,1.5)"><m>\frac{\pi}{2}</m></label>
+  <label anchor="(-1.5,.15)"><m>\delta</m></label>
+  <label anchor="(-3sqrt(3)/4,.6)"><m>\beta</m></label>
+  <label anchor="(-1.6*sqrt(2)/2,1.5*sqrt(2)/2)"><m>\alpha</m></label>
+     
+  </graph>
+<p> Tip: Type <m>\pi</m> by just typing pi. You can also use the keyboard in the bottom-right corner.</p>
+  <p><m>\alpha=</m><answer>3*pi/4</answer></p>
+  <p><m>\beta=</m><answer>5*pi/6</answer></p>
+  <p><m>\delta=</m><answer>pi</answer></p>
+
+  <p>We can reverse the thought process here and begin by drawing a ray with a specified angle or radian measure, then ask what the <m>x</m> or <m>y</m>-coordinates of the intersection point of the ray with the unit circles might be.</p>
+
+  <p>The trig functions <em>sine</em> and <em>cosine</em> simplify this question.</p> 
+  
+  <p>Writing <m>\sin(\frac{\pi}{6})</m> does the job of asking "What will be the <m>y</m>-coordinate of the intersection point of the ray with <m>\frac{\pi}{6}</m> radians and the unit circle?". The value of <m>\sin(\frac{\pi}{6})</m> is <answer>0.5</answer>.</p>
+  
+  <p>Similarly, <m>\cos(\frac{\pi}{3})</m> does the job of asking "What will be the <answer inline><choice credit="1"><m>x</m>-coordinate</choice> <choice><m>y</m>-coordinate</choice></answer> of the intersection point of the ray with <m>\frac{\pi}{3}</m> radians and the unit circle?". The value of <m>\cos(\frac{\pi}{3})</m> is <answer>0.5</answer>.</p>
+  
+
+
+  <p>Determine the values of the following trig functions. You may want to use your work from Example 1 for help!</p>
+  <p><m>\cos(\frac{\pi}{6})=</m><answer>sqrt(3)/2</answer></p>
+  <p><m>\sin(\frac{\pi}{3})=</m><answer>sqrt(3)/2</answer></p>
+  <p><m>\cos(\frac{\pi}{4})=</m><answer>sqrt(2)/2</answer></p>
+  <p><m>\sin(\frac{\pi}{6})=</m><answer>sqrt(3)/2</answer></p>
+
+</aside>
+
+<aside> <title>Example 3</title>
+  <p>The other 4 trig functions (<em>tangent, cotangent, secant, and cosecant</em>) are defined using sine and cosine. This means that it is essential to know or be able to re-discover the values of sine and cosine around the unit circle.</p>
+
+  <p><m>\tan(\theta) = \frac{\sin(\theta)}{\cos(\theta)},\ \cot(\theta) = \frac{1}{\tan(\theta)} = \frac{\cos(\theta)}{\sin(\theta)},\ \sec(\theta) = \frac{1}{\cos(\theta)},\ \csc(\theta) = \frac{1}{\sin(\theta)}</m></p>
+
+  <p>Use your work from above along with some extensions of those ideas to answer the following questions. For real practice, do not use a calculator! If the answer is undefined (which it may be as fractions are now involved!), type UND.</p>
+
+  <p><m>\tan(\frac{\pi}{4})=</m><answer>1</answer></p>
+  <p><m>\cot(\frac{3\pi}{4})=</m><answer>-1</answer></p>
+  <p><m>\sec(\frac{\pi}{6})=</m><answer>2/sqrt(3)</answer></p>
+  <p><m>\tan(\frac{\pi}{2})=</m><answer>UND</answer></p>
+  <p><m>\csc(\pi)=</m><answer>UND</answer></p>
+  <p><m>\tan(\frac{5\pi}{3})=</m><answer>sqrt(3)</answer></p>
+</aside>
+
+<aside><title>Expert Tips</title>
+  <p>Before you go, here are a few mistakes that we see students make often. Be sure to understand why these are not acceptable so that they are easier to avoid! </p>
+
+  <p>1. <em>Writing <m>\sin(\ )</m> with no argument.</em> Trig functions are functions, meaning they require an argument. An argument is the 'input' to the function or a place-holder variable. Because the sine function asks a question about a specific radian, you cannot leave off that information. <m>\sin(\ )</m> is not meaningful and leaves a question of "Sine of what angle/radian?". You would never write <m>\sqrt(\ )</m> or <m>(\ )^2</m> (or <m>\ln(\ )</m>). Of course, this is true for all 6 trig functions, not just sine.  </p>
+
+  <p>2. <em>Memorizing without understanding.</em> If you can perfectly memorize the coordinates of the points on the unit circle, or you have some trickes which quickly help you fill in missing pieces, great! However, if you have only memorized this information without an understanding for the meaning (as outlined in Examples 1 and 2), you will be <em>stuck</em> if you ever blank out on an exam. During homework, try taking 10 extra seconds to visualize the unit circle while computing values of trig functions. </p>
+
+  <p>3. <em><m>\sin(30^\circ)</m> and <m>\sin(30)</m> are different.</em> While they may look the same at first glance, these are different values. The first expression asks the same as <m>\sin(\frac{\pi}{6})</m> which you know is 1/2. The second asks the sine value at 30 <em>radians</em> which is approximately -0.988! Remember, without a degree symbol, we automatically assume the units of the argument of a trig function is radians. </p>
+</aside>
