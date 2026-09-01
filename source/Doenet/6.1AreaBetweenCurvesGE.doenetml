@@ -1,0 +1,276 @@
+<title>6.1 Area Between Curves Guided Examples</title>
+
+<p>Use the following examples to practice calculating finding the area between curves. </p>
+
+<p>Try these questions <em>before</em> starting your homework on your own. Hopefully this will be a good stepping stone between class notes and independent homework.</p>
+
+<section boxed><title>Example 1</title>
+  <setup>
+  <function name="f" >
+    (x-2)^2
+  </function>
+    <function name="g">
+      x
+    </function>
+</setup>
+
+<p>Find the area between the curves <m>f(x)=(x-2)^2</m> and <m>g(x)=x</m>.</p>
+<cascade >  
+  <example boxed><title>Step 1</title> <p>We should start by graphing the region between the two curves. On the following graph, sketch the function <m>f(x)=(x-2)^2</m> by determining three points on the graph.</p>
+
+<sideBySide width="45%">
+  <table suppressTableNameInTitle="true"><title><m>f(x)=(x-2)^2</m></title>
+  <tabular topBorder="minor" bottomBorder="minor" startBorder="minor" endBorder="minor">
+    <row header>
+      <cell><m>x</m></cell>
+      <cell><m>f(x)</m></cell>
+    </row>
+    <row>
+      <cell>1</cell>
+      <cell><answer name="ansY1">1</answer></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><answer name="ansY2">0</answer></cell>
+    </row>
+    <row>
+      <cell>3</cell>
+      <cell><answer name="ansY3">1</answer></cell>
+    </row>
+  </tabular>
+</table>
+  
+  <graph xMin="-1" xMax="6" yMin="-1" yMax="6">
+    <parabola name="fStudent" through="(1,$ansY1) (2,$ansY2) (3,$ansY3)"/>
+  </graph>
+  </sideBySide>  
+</example>
+
+  <example boxed><title>Step 2</title> <p>On the following graph, sketch the function <m>g(x)=x</m> by determining two points on the graph.</p>
+
+<sideBySide width="45%">
+  <table suppressTableNameInTitle="true"><title><m>g(x)=x</m></title>
+  <tabular topBorder="minor" bottomBorder="minor" startBorder="minor" endBorder="minor">
+    <row header>
+      <cell><m>x</m></cell>
+      <cell><m>g(x)</m></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell><answer name="gAnsY1">0</answer></cell>
+    </row>
+    <row>
+      <cell>2</cell>
+      <cell><answer name="gAnsY2">2</answer></cell>
+    </row>
+  </tabular>
+</table>
+  
+  <graph xMin="-1" xMax="6" yMin="-1" yMax="6">
+    <line styleNumber="2" through="(0,$gAnsY1) (2,$gAnsY2)"/>
+    <function>$f</function>
+    <point name="P" hide="!$lineGraphed">(5,1)</point>
+    <regionBetweenCurves name="regionFill" boundaryValues="1 4" hide="!$isBetweenFuncs" >$f $g</regionBetweenCurves>
+
+  </graph>
+  </sideBySide>
+
+    <boolean name="lineGraphed" hide>$gAnsY1=0 and $gAnsY2=2</boolean>
+      
+  <p>Drag and drop the point in the above graph to the region bounded by <m>f(x)</m> and <m>g(x)</m>. You have slected the correct region: <boolean name="isBetweenFuncs"><isBetween limits="$$f($P.x) $$g($P.x)">$P.y</isBetween> and <isBetween limits="1 4">$P.x</isBetween></boolean></p>
+  </example>
+
+<example boxed><title>Step 3</title>
+  <p>  We should determine if the bounded region is Type I or Type II. Remember that a Type I region is "Vertically Simple", meaning the region has a clear top function and bottom function. A Type II region is <answer inline>
+    <choice>vertically</choice>
+    <choice credit="1">horizontally</choice>
+  </answer> 
+  simple, meaning the region has a clear left-hand and right-hand region. </p>
+
+  <p>The region in this example is <answer inline>
+    <choice credit="1"> Type I</choice>
+    <choice> Type II</choice>
+  </answer>.</p>
+
+ <p> This hints at the fact that we should determine the <answer inline>
+    <choice credit = "1"><m>x</m></choice>
+    <choice><m>y</m></choice>
+  </answer>-coordinates of the intersections of <m>f(x)</m> and <m>g(x)</m>. Do this by setting the formulas for each function equal to one another. Try this now and enter your answers below: </p>
+
+  <answer><label>Smaller <m>x</m>-value:</label> 1</answer> 
+  <answer><label>Larger <m>x</m>-value:</label> 4</answer> 
+</example>
+
+  <example boxed><title>Step 4</title>
+    <p>It is finally time to setup the integral which calculates the area of the region bounded by the functions and evaluate. Fill in the blanks in the integral below:</p>
+
+    <p showCorrectness sectionWideCheckWork colorAnswersSeparately> <m>\displaystyle \int_1^4</m><answer>x</answer><m>-</m><answer>(x-2)^2</answer><answer inline><choice credit="1"><m>dx</m></choice> <choice><m>dy</m></choice></answer> = <answer>4.5</answer></p>
+
+    
+  </example>
+</cascade>
+
+</section>
+
+<section boxed><title>Example 2</title>
+<setup>
+  <function name="f" >
+    2x^2
+  </function>
+    <function name="g">
+      2x+4
+    </function>
+</setup>
+<cascade>
+  Find the area of the region bounded by the curves <m>f(x) = 2x^2</m> and <m>g(x) = 2x+4</m> and the <m>x</m>-axis.
+
+  <example boxed><title>Step 1</title> <p>We should start by graphing the region between the two curves. On the following graph, sketch the function <m>f(x)=2x^2</m> by determining three points on the graph.</p>
+
+<sideBySide width="45%">
+  <table suppressTableNameInTitle="true"><title><m>f(x)=2x^2</m></title>
+  <tabular topBorder="minor" bottomBorder="minor" startBorder="minor" endBorder="minor">
+    <row header>
+      <cell><m>x</m></cell>
+      <cell><m>f(x)</m></cell>
+    </row>
+    <row>
+      <cell>-2</cell>
+      <cell><answer name="ansY1">8</answer></cell>
+    </row>
+    <row>
+      <cell>-1</cell>
+      <cell><answer name="ansY2">2</answer></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell><answer name="ansY3">0</answer></cell>
+    </row>
+  </tabular>
+</table>
+  
+  <graph xMin="-3" xMax="1" yMin="-1" yMax="8">
+    <parabola name="fStudent" through="(-2,$ansY1) (-1,$ansY2) (0,$ansY3)"/>
+  </graph>
+  </sideBySide>  
+</example>
+
+  <example boxed><title>Step 2</title> <p>On the following graph, sketch the function <m>g(x)=2x+4</m> by determining two points on the graph.</p>
+
+<sideBySide width="45%">
+  <table suppressTableNameInTitle="true"><title><m>g(x)=2x+4</m></title>
+  <tabular topBorder="minor" bottomBorder="minor" startBorder="minor" endBorder="minor">
+    <row header>
+      <cell><m>x</m></cell>
+      <cell><m>g(x)</m></cell>
+    </row>
+    <row>
+      <cell>-2</cell>
+      <cell><answer name="gAnsY1Ex2">0</answer></cell>
+    </row>
+    <row>
+      <cell>0</cell>
+      <cell><answer name="gAnsY2Ex2">4</answer></cell>
+    </row>
+  </tabular>
+</table>
+  
+  <graph xMin="-3" xMax="1" yMin="-1" yMax="8">
+    <line styleNumber="2" through="(-2,$gAnsY1Ex2) (0,$gAnsY2Ex2)"/>
+    <function>$f</function>
+    <point name="P" hide="!$lineGraphed2">(-2,2)</point>
+    <regionBetweenCurveXAxis function="$f" name="regionFill2" boundaryValues="-1 0" hide="!$isBetweenFuncs2" />
+    <regionBetweenCurveXAxis function="$g" name="regionFill2" boundaryValues="-2 -1" hide="!$isBetweenFuncs2" />
+  </graph>
+  </sideBySide>
+
+    <boolean name="lineGraphed2" hide>$gAnsY1Ex2=0 and $gAnsY2Ex2=4</boolean>
+      
+  <p>Drag and drop the point in the above graph to the region bounded by <m>f(x)</m>, <m>g(x)</m>, and the <m>x</m>-axis. You have slected the correct region: <boolean name="isBetweenFuncs2"><isBetween limits="($P.y-4)/2 -sqrt($P.y/2)">$P.x</isBetween> and <isBetween limits="0 2">$P.y</isBetween></boolean></p>
+  </example>
+
+<example boxed><title>Step 3</title>
+  <p>  We should determine if the bounded region is Type I or Type II. Remember that a Type I region is "Vertically Simple", meaning the region has a clear top function and bottom function. A Type II region is <answer inline>
+    <choice>vertically</choice>
+    <choice credit="1">horizontally</choice>
+  </answer> 
+  simple, meaning the region has a clear left-hand and right-hand region. </p>
+
+  <p>The region in this example is <answer inline>
+    <choice> Type I</choice>
+    <choice credit="1"> Type II</choice>
+  </answer>.</p>
+
+  <hint><title>Why??</title> It may seem to you like this shaded region has a clear top function (the line and the parabola are on top) and a clear bottom function (<m>y=0</m> or the <m>x</m>-axis). This is true, but because the parabola is not ALWAYS the top bound of this region and the line is not ALWAYS the top bound of this region, it is easier to calculate this integral as a Type II region.</hint>
+  
+ <p> This hints at the fact that we should determine the <answer inline>
+    <choice><m>x</m></choice>
+    <choice credit = "1"><m>y</m></choice>
+  </answer>-coordinates of the intersections of <m>f(x)</m> and <m>g(x)</m>. Do this by setting the formulas for each function equal to one another to find the <m>x</m>-cooridantes of the intersection and the using either function to find the <m>y</m>-coordinate of intersection. Try this now and enter your answers below: </p>
+
+  <answer><label>Smaller <m>y</m> bound:</label> 0</answer> 
+  <answer><label>Larger <m>y</m> bound:</label> 2</answer> 
+</example>
+
+  <example boxed><title>Step 4</title>
+    <p>It is finally time to setup the integral which calculates the area of the region bounded by the functions and evaluate. Fill in the blanks in the integral below:</p>
+
+    <p showCorrectness sectionWideCheckWork colorAnswersSeparately> <m>\displaystyle \int_0^2</m><answer>sqrt(y/2)</answer><m>-</m><answer>(y-4)/2</answer><answer inline><choice><m>dx</m></choice> <choice credit="1"><m>dy</m></choice></answer> = <answer name="Ex2FinalAnswer">13/3</answer></p>
+
+    <!-- <hint hide="($Ex2FinalAnswer.nSubmissions<3) or ($Ex2FinalAnswer.creditAchieved=0)"> You may need to review the following:
+    
+    <p>For Type II regions, we subtract the Left-hand bound from the Right-hand bound. </p>
+    
+    <p>We can integrate <m>\sqrt{\frac{y}{2}}</m> by rewriting the radical as a fractional exponent, <m>(y/2)^{1/2}</m>, and then using a u-substitution.</p></hint> -->
+    
+  </example>
+
+
+  
+</cascade>
+  
+</section>
+
+<section boxed><title>Example 3</title>
+<setup>
+  <function name="f" >
+    2*sin(x)
+  </function>
+    <function name="g">
+      sin(x)
+    </function>
+</setup>
+  <cascade >
+  <p>Find the area between the curves <m>f(x) = 2\sin(x) </m> and <m>g(x) = \sin(x)</m> on the interval <m>[0,2\pi]</m>. </p>
+
+    <example boxed><title>Step 1</title>
+
+     <p> For this example, I have graphed <m>f(x)</m> and <m>g(x)</m> for you, although you should make sure you are capable of doing this on your own.</p>
+
+       <graph xMin="-pi" xMax="3pi" yMin="-3" yMax="3" xTickScaleFactor="pi" fixAxes="true">
+    <function>$f</function>
+         <function styleNumber="2">$g</function>
+    <point name="P" >(5,1)</point>
+    <regionBetweenCurves name="regionFill" boundaryValues="0 2pi" hide="!$isBetweenFuncs3" >$f $g</regionBetweenCurves>
+
+  </graph>
+
+    <p>Move the point in the graph above to the region between the functions <m>f(x)</m> and <m>g(x)</m> on the interval <m>[0,2\pi]</m>.</p>
+
+      <p showCorrectness sectionWideCheckWork colorAnswersSeparately>Notice that from the graph, we can see that the function <m>f(x) = 2\sin(x)</m> is the top bound of the region on the interval <answer>0</answer><m> \le x\le </m> <answer>pi</answer>, but the function <m>g(x) = \sin(x)</m> is the top bound of the region on the interval <answer>pi</answer><m> \le x\le </m> <answer>2*pi</answer>.</p>
+
+      <p>We can also discover this by setting the functions equal to one another and solving for <m>x</m>. The solutions to the equation <m>2\sin(x) =\sin(x)</m> on the interval <m>[0,2\pi]</m> are <m>x=</m><answer unorderedCompare>0,pi, 2*pi</answer> (type your answer in a comma-separated list).</p>
+      
+      <boolean name="isBetweenFuncs3" hide><isBetween limits="$$g($P.x) $$f($P.x)">$P.y</isBetween> and <isBetween limits="0 2pi">$P.x</isBetween></boolean>
+    </example>
+
+    <example boxed><title>Step 2</title>
+
+      <p>Because the top and bottom bounds of the shaded region switch at <m>x=\pi</m>, we must use two separate integrals to calculate the area between the two curves. Fill in the missing portions of the integrals below. Then evaluate each integral.</p>
+
+      <p  showCorrectness sectionWideCheckWork colorAnswersSeparately><m>\int_0^{\pi}</m><answer>2*sin(x)</answer><m>-</m><answer>sin(x)</answer><m>dx+\int_\pi^{2\pi}</m><answer>sin(x)</answer><m>-</m><answer>2*sin(x)</answer><m>dx=</m><answer>4</answer>.</p>
+    
+    </example>
+
+</cascade>
+
+</section>

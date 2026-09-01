@@ -1,0 +1,167 @@
+<title>6.4 Applications of Integration</title>
+
+<p>In this section, we understand how integrals can be used to calculate work done in some simple systems. The idea follows the same basic principle of breaking the task into small slices or cross-sections, estimating the Force needed to move a sample slice, and then integrating the Force function to determine total work done. </p>
+
+<p>Tip: You can type <m>\Delta</m> throughout by just typing Delta, with a capital D.</p>
+
+<p>Tip: To type a subscript, like the <m>i</m> in <m>x_i</m>, type <m>x\_ i</m>. </p>
+
+<cascade revealAll>
+<section boxed><title>Example 1</title>
+  
+<p>In some scenarios, the amount of Force needed to move an object stays <em>constant</em> over the entire distance that the object is moved. In those cases, we can calculate a simple formula for determining the amount of Work done in moving the object. </p>
+
+  <p>For our first example, imagine that an object whose mass is <m>m</m> kg needs to be moved from location <m>a</m> to location <m>b</m>. Recall that gravity (<m>g</m>) is assumed to be <m>9.8 m/s^2</m>.</p>
+  
+  <cascade >
+<example boxed><title>Step 1</title>
+  <p>The force needed to move the object is <m>F=(\text{mass})\cdot g</m>. In this case, <m>F=</m><answer>9.8m</answer><answer inline>
+    <choice credit = "1"><m>kg\cdot m/s^2 </m>(Newton, N) </choice>
+    <choice> <m>kg\cdot m^2/s^2 </m>(Newton-meter, Joule, J)</choice>
+  </answer>.</p>
+</example>
+
+<example boxed> <title>Step 2</title>
+  <p>Setup a Riemann sum which calculates the total work done in moving the object from point <m>a</m> to point <m>b</m>.</p>
+
+  <p showCorrectness colorAnswersSeparately sectionWideCheckWork><m>\lim_{n\to\infty} \sum_{i=1}^n F\cdot \Delta x=\lim_{n\to\infty}\sum_{i=1}^n</m><answer>9.8m</answer><answer>(b-a)/n</answer>.</p>
+  <hint>Remember that <m>\Delta x</m> is the width of each slice/cross-section/rectangle in a Riemann sum. For this example, what is the total width of the interval? Then divide that by the number of rectangles.</hint>
+</example>
+
+<example boxed><title>Step 3</title>
+  <p> The Riemann sum in Step 2 becomes the integral </p>
+  <p showCorrectness colorAnswersSeparately sectionWideCheckWork>Work = <m>\int_a^b</m><answer>9.8m</answer> <m>dx = </m><answer>9.8m(b-a)</answer><answer inline>
+    <choice><m>kg\cdot m/s^2 </m>(Newton, N) </choice>
+    <choice credit = "1"> <m>kg\cdot m^2/s^2 </m>(Newton-meter, Joule, J)</choice>
+  </answer>.
+</p>
+
+  <p>This leads to the formula for Work done with constant force applied:</p>
+  <p><m>W = (\text{Force})\cdot (\text{distance})</m>.</p>
+</example>
+  
+</cascade>
+</section>
+
+<section boxed><title>Example 2</title>
+  <cascade >
+
+    <p>In this example, the amount of force that needs to be applied will vary, meaning that an integral is <em>necessary</em> in comparison with Example 1.</p>
+
+    <p>A 200 lb. chain is 50 feet long hangs from the top of a tall building. How much work will be needed to lift the cable to the top of the building? </p>
+
+<example boxed><title>Step 1</title>
+<p> Let's setup the problem by checking on a few facts.</p>
+
+  
+  <p>First, since the amount of chain hanging over the edge of the building changes over time, the amount of force needed to lift the remaining chain will <answer inline>
+    <choice>stay constant</choice>
+    <choice credit="1">change</choice></answer>.</p> 
+
+  <p showCorrectness sectionWideCheckWork colorAnswersSeparately>Let  <m>y</m> represent the amount of cable that has been pulled over the edge. So when <m>y=0</m>, there is <answer>50 </answer> feet of cable remaining over the edge. When <m>y=10</m>, there is <answer>40</answer> feet remaining to be pulled up. And when <m>y=50</m>, there is <answer>0</answer> feet of cable left to be pulled up.</p>
+
+  <p>From the weight of the rope and the length of the rope, we can calculate the weight of the rope in punds per foot: <answer>4</answer> lbs/ft. </p>
+
+  <p>Slice the cable into small sections of length <m>\Delta y</m>. Then the weight of one section is <answer>4 Delta y</answer> lbs.</p>
+</example>
+
+    <example boxed><title>Step 2</title>
+
+      <p>We have broken this problem into smaller pieces and can now pretend that a small section of cable weighing <m>4\Delta y</m> lbs/ft all needs to be pulled up the same amount of distance. </p>
+      
+    <p>The point <m>y_i</m> on the cable will need to be pulled up to the top of the building. This point will need to be pulled up how far? <answer>y_i</answer> feet</p>
+
+    <p>This means that the small section around <m>y_i</m> will require how much work to be pulled to the top? <answer>4y_i Delta y</answer> ft-lbs </p> 
+    
+    </example>
+
+    <example boxed><title>Step 3</title>
+    
+     <p>Putting this together, a Riemann sum can be used to calculate how much work will need to be done to move each of the small sections: </p>
+
+       <p showCorrectness colorAnswersSeparately sectionWideCheckWork><m>\lim_{n\to\infty} \sum_{i=1}^n F(y)\cdot \Delta y=\lim_{n\to\infty}\sum_{i=1}^n</m><answer>4 y_i</answer><answer>(50)/n</answer>.</p>
+
+      <p>This Riemann sum beomes the integral <m>\int_0^{50}</m><answer>4y</answer> <m>dy=</m><answer>2*(50)^2</answer></p>
+    </example>
+  </cascade>
+
+</section>
+
+<section boxed><title>Step-by-Step</title>
+  <p>The process for all work type problems is similar to the process used in Example 2:</p>
+
+  <p>Determine the length or area of a small section, usually a function.</p>
+
+  <p>Use <m>\Delta y</m> to write a function for the volume of a small section.</p>
+
+  <p>Determine the force needed to lift that volume using density or weight of the material.</p>
+
+  <p>Find a formula for how much work will be needed to move the section, <m>W=F\cdot d</m>.</p>
+
+  <p>Integrate to total the work needed to move all sections.</p>
+
+</section>
+
+<section boxed><title>Example 3</title>
+<cascade>
+  <p>Find the work needed to pump water from a tank in the shape of an inverted cone with radius 1 meter and height 5 meters. Suppose that there is only 4 meters of water in the tank currently and we want to leave 1 meter of water in the tank when done.  Recall that the density of water is <m>1000 kg/m^3</m>.</p>
+
+  <example boxed><title> Step 1</title>
+  <p> Let <m>y</m> represent the depth of a cross-section in the tank with <m>y=0</m> being the top of the tank and <m>y=5</m> the bottom of the tank. The shape of each cross-section of water is in the shape of a <answer inline>
+    <choice>square </choice>
+    <choice credit="1"> disk</choice>
+    <choice>triangle</choice>
+  </answer>.</p>
+
+    <p>We must find the area of these cross-sections, which will be <m>\pi r^2</m>. The hard work will be to write <m>r</m> as a function of <m>y</m>. Let's use similar triangles to do this.</p>
+
+    <graph displayXAxis="false" displayYAxis="false" showBorder="false" showNavigation="false" fixed="true" xMin="-1.5" xMax="1.5" yMin="0" yMax="5.15"> <triangle vertices="(0,0) (0,5) (1,5)" /> <triangle styleNumber="2" vertices="(0,0) (0,3) (3/5,3)" layer="1"/> 
+      <triangle vertices="(0,0) (0,5) (-1,5)"/>
+      <label anchor="(.5,5)" positionFromAnchor="top">1</label> 
+      <label anchor="(.25,3)" positionFromAnchor="top">r</label> 
+      <label anchor="(0.05,4)" positionFromAnchor="right"><m>y</m></label>
+      <label anchor="(-.1,3)" positionFromAnchor="left">5</label>
+      <label anchor="(0.05,1.5)" positionFromAnchor="right">?</label></graph>
+
+  <p>If the height of the tank is 5 meters, the height of the edge labeled '?' is <answer>5-y</answer>. </p>
+    
+  <p>Comparing sides of similar triangles allows us to setup a proportion where we compare the sides of the small triangle to the sides of the larger:<m>\frac{r}{5-y}=\frac{<mathInput>$proportion</mathInput>}{5}</m>.</p>
+
+    <p>What is the missing part of the proportion above? <answer name="proportion">1</answer></p>
+
+    <p>Solve the proportion to get a formula for <m>r</m> in terms of <m>y</m>: <m>r=</m><answer>(5-y)/5</answer> </p>
+    
+    <p> The Area of the face of one cross-section is <m>\pi r^2</m> or <answer>pi ((5-y)^2)/(25)</answer></p>
+  </example>
+
+    <example boxed><title>Step 2</title>
+    <p>Using the Area formula you found in the last step, you can now write the Volume of a small cross-sections of thickness <m>\Delta y</m> as <answer>pi ((5-y)^2)/25 Delta y</answer>.</p>
+
+    <p>Knowing the Volume of a cross-section that needs to be lifted is important, but even more important is knowing what the weight of that cross-section will be, or how much Force will need to be applied to overcome gravity. Mass is (volume)<m>\times</m> (density), so the mass of the cross section is <m>1000 \pi ((5-y)^2)/25 \Delta y</m>. Using <m>9.8 m/s^2</m> for gravity, we can finally find the Force needed as (mass)<m>\times</m>(g) <m>=</m><answer>9800 pi ((5-y)^2)/25 Delta y</answer>.</p>
+      
+  </example>
+
+  <example boxed><title>Step 3</title>
+    <p>To calculate the amount of work needed to lift a cross-section, we need to calculate <answer inline><choice>mass</choice>
+    <choice credit = "1">force</choice>
+    <choice>density</choice> </answer><m>\times</m><answer inline><choice> gravity</choice>
+    <choice>time</choice>
+    <choice credit="1">distance</choice></answer>.</p>
+
+    <p>A cross-section that is at depth <m>y</m> in our tank needs to be lifted <answer>y</answer> meters to reach the top of the tank.</p>
+
+    <p>So the work needed to move one cross-section at depth <m>y</m> to the top of the tank is <answer>9800 y pi ((5-y)^2)/25 Delta y</answer>.</p>
+
+    <p>We integrate to find the work needed to now pump all of the cross-sections to the top of the tank. Since the tank is not full, what will be the lower bound of integration? <answer>1</answer> Since we do not want to empty the tank, what should be the upper bound of integration? <answer>4</answer> </p>
+  </example>
+
+  <example boxed><title>Step 4</title>
+    <p>Setup the integral and calculate:</p>
+
+    <p sectionWideCheckWork showCorrectness colorAnswersSeparately><m>\displaystyle \int_1^4 </m> <answer>9800 y pi ((5-y)^2)/25 </answer> <m>dy=</m> <answer>16170 pi</answer></p>
+    
+  </example>
+
+</cascade>
+</section>
+</cascade>

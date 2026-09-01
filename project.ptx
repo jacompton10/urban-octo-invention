@@ -7,6 +7,10 @@
 <project ptx-version="2">
   <targets>
     <target name="web" format="html" />
+    <target name="AreaBetweenCurvesGEweb" format="html" source="6.1AreaBetweenCurvesGE.ptx" />
+    <target name="AreaBetweenCurvesGE" format="html" compression="scorm" source="6.1AreaBetweenCurvesGE.ptx"/>
+    <target name="ApplicationsOfIntegrationGEweb" format="html" source="6.4ApplicationsOfIntegrationGE.ptx" />
+    <target name="ApplicationsOfIntegrationGE" format="html" compression="scorm" source="6.4ApplicationsOfIntegrationGE.ptx"/>
     <target name="scorm" format="html" compression="scorm"/>
     <target name="assignment2" format="html" compression="scorm" source="assignment2.ptx"/>
     <target name="print" format="pdf" />

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <!-- we first include a file which contains the docinfo element: -->
+  <xi:include href="./docinfo.ptx" />
+
+  <article xml:id="my-great-book">
+    <title>6.4 Applications of Integration GE</title>
+    
+    <!-- Include frontmatter -->
+    <!-- <xi:include href="./frontmatter.ptx" /> -->
+
+    <!-- Include chapters -->
+
+
+  <!-- <introduction>
+    <p> Text before the first section. </p>
+  </introduction> -->
+
+  <!-- include sections -->
+  <!-- <xi:include href="sec-section-name.ptx" /> -->
+
+<exercise>
+<dynamic>
+<statement> 
+<interactive label="ApplicationsOfIntegrationGE" platform="doenetml">
+<slate surface="doenetml">
+<xi:include href="Doenet/6.4ApplicationsOfIntegrationGE.doenetml" parse="text"/>
+</slate> 
+</interactive> 
+</statement>
+</dynamic>
+<static/>  
+</exercise>
+
+
+
+    <!-- Include backmatter -->
+    <!-- <xi:include href="./backmatter.ptx" /> -->
+
+  </article>
+</pretext>
+
