@@ -13,6 +13,7 @@
     <target name="ApplicationsOfIntegrationGE" format="html" compression="scorm" source="6.4ApplicationsOfIntegrationGE.ptx"/>
     <target name="scorm" format="html" compression="scorm"/>
     <target name="assignment2" format="html" compression="scorm" source="assignment2.ptx"/>
+    <target name="trigIdentitiesReview" format="html" compression="scorm" source="trigIdentitiesReview.ptx"/>
     <target name="print" format="pdf" />
   </targets>
 </project>
