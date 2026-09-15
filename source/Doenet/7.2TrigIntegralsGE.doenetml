@@ -1,0 +1,128 @@
+<title>7.2 Trig Integrals</title>
+
+<p>In this section, we review the ideas used to calculate integrals of the form <m>\int \sin^m(x)\cos^n(x)\ dx</m> and <m>\int \sec^m(x)\tan^n(x)\ dx</m>, where <m>m,n</m> are positive integers. </p>
+
+
+<section boxed><title>Example 1</title>
+<cascade >
+  <p>Calculate <m>\int \sin^2x\cos^3x\ dx</m>. </p>
+
+  <example boxed><title>Step 1</title>
+  <p>Notice that because the cosine function is being raised to an <answer inline>
+    <choice credit="1">ODD</choice>
+  <choice>EVEN</choice></answer> power, we can separate off one factor of cosine and be left with an EVEN power of cosine. So,</p>
+
+  <p><m>\int \sin^2x\cos^3x\ dx=\int \sin^2x\cos^2x </m><answer>cos(x) dx</answer>.</p>
+
+    </example>
+
+  <example boxed><title>Step 2</title>
+
+  <p>To be able to have the rest of the integrand in terms of <m>\sin x</m>, we need to use the trig identity <answer inline><choice credit="1"> <m>\sin^2x+\cos^2x=1</m> </choice>
+  <choice > <m>\tan^2x+1=\sec^2x</m> </choice>
+  <choice > <m>\cot^2x+1=\csc^2x</m> </choice></answer></p>
+
+  <p>Specifically, we should subsitute <m>\cos^2x =</m><answer>1-(sin x)^2</answer>, making the integral</p>
+
+   <p><m>\int \sin^2x\cos^3x\ dx=\int \sin^2x\cos^2x \cdot\cos x\ dx=\int \sin^2x (</m><answer>1-sin^2 x</answer><m>)\cos x\ dx</m>.</p> 
+    </example>
+
+  <example boxed><title>Step 3</title>
+
+  <p showCorrectness colorAnswersSeparately sectionWideCheckWork>Now that the integrand is all in terms of sine, we can set <m>u=</m><answer>sin x</answer> so that <m>du =</m><answer>cos x dx</answer>.</p>
+
+    <p>Then <m>\int  \sin^2x (1-\sin^2 x)\cos x\ dx=\int</m> <answer>u^2(1-u^2) </answer> <m>du = </m><answer>u^3/3-u^5/5</answer><m>+C</m>.</p>
+
+    <p>Putting this back in terms of <m>x</m>, we have <m>\int \sin^2x\cos^3x\ dx = </m><answer name="ex1ans">(1/3)sin^3x-(1/5)sin^5x +C</answer></p>
+    <conditionalContent>
+  <case condition="$ex1ans =(1/3)sin^3x-(1/5)sin^5x ">
+    Remember to add <m>+C</m> for indefinite integrals!
+  </case>
+</conditionalContent> 
+  
+  </example>
+  
+</cascade>  
+</section>
+
+<!-- ------------------------ -->
+
+<section boxed><title>Example 2</title>
+<cascade >
+  <p>Calculate <m>\int \sin^4x\ dx</m>. </p>
+
+  <example boxed><title>Step 1</title>
+
+  <p>When both trig functions are being raised to an EVEN power, we cannot separate off any factors of either function and be left with anything useful. This is because we have no trig identities for <m>\sin^3 x</m> or <m>\cos^3 x</m>. </p>
+    
+    <p>Well, actually... formulas for these do exist, but we can't memorize everything, right? And anyways, we can problem solve around this obstacle.</p>
+    
+  <p>Instead, we can use the  identity <answer inline><choice credit="1"> <m>\sin^2x+\cos^2x=1</m> </choice>
+  <choice > <m>\tan^2x+1=\sec^2x</m> </choice>
+  <choice > <m>\cot^2x+1=\csc^2x</m> </choice></answer></p>
+
+  <p>Specifically, we should subsitute <m>\cos^2x =</m><answer>1-(sin x)^2</answer>, making the integral</p>
+
+   <p><m>\int \sin^2x\cos^3x\ dx=\int \sin^2x\cos^2x \cdot\cos x\ dx=\int \sin^2x (</m><answer>1-sin^2 x</answer><m>)\cos x\ dx</m>.</p> 
+    </example>
+
+  <example boxed><title>Step 2</title>
+
+  <p showCorrectness colorAnswersSeparately sectionWideCheckWork>Now that the integrand is all in terms of sine, we can set <m>u=</m><answer>sin x</answer> so that <m>du =</m><answer>cos x dx</answer>.</p>
+
+    <p>Then <m>\int  \sin^2x (1-\sin^2 x)\cos x\ dx=\int</m> <answer>u^2(1-u^2) </answer> <m>du = </m><answer>u^3/3-u^5/5</answer><m>+C</m>.</p>
+
+    <p>Putting this back in terms of <m>x</m>, we have <m>\int \sin^2x\cos^3x\ dx = </m><answer name="ex1ans">(1/3)sin^3x-(1/5)sin^5x +C</answer></p>
+    <conditionalContent>
+  <case condition="$ex1ans =(1/3)sin^3x-(1/5)sin^5x ">
+    Remember to add <m>+C</m> for indefinite integrals!
+  </case>
+</conditionalContent> 
+  
+  </example>
+  
+</cascade>  
+</section>
+
+<section boxed><title>Example 3</title>
+<p>Calculate the integral <m>\int \csc\theta\ d\theta</m>.</p>
+<cascade >
+  <example boxed><title>Step 1</title>
+   <p>The process for this integral follows the same idea as for <m>\int \sec x\ dx</m>. Finding that from your notes from recitation may help you through this example.</p>
+
+    <p>Before we start, it may be good to remind yourself that <m>\frac{d}{dx} \csc x = </m><answer>-csc(x)cot(x)</answer> and <m>\frac{d}{dx} \cot x=</m><answer>-csc^2(x)</answer>.</p>
+
+    <p>We could try <m>u</m>-substitution or integration by parts, but none of these will work (it is fun and good exercise to try both strategies!). Essentially, the problem is that both strategies require us to recognize the <em>derivative of some function u (called du)</em> should be present in the integral. We will have to <em>manufacture</em> our own du! </p>
+
+    <p>Let's start by multiplying the inegrand by 1 in an interesting way. Use <m>\frac{\csc(x)+\cot(x)}{\csc(x)+\cot(x)}</m> so that </p>
+
+    <p><m>\displaystyle \int \csc(x)\cdot 1\ dx = \int \csc(x)\cdot \frac{\csc(x)+\cot(x)}{\csc(x)+\cot(x)}\ dx=\int \frac{<mathInput>$Ex3Ans1</mathInput>}{\csc(x)+\cot(x)}\ dx</m>.</p>
+
+    <p>Enter the missing numerator in the above integral: <answer name="Ex3Ans1">csc^2(x)+csc(x)cot(x)</answer></p>
+ 
+  </example>
+
+  <example boxed><title>Step 2</title>
+    <p>Woah! This has an immense outcome! Did you notice that <m>\csc^2(x)+\csc(x)\cot(x)</m> looks much like the derivative of something? There's our <em>du</em>! So the <m>u</m> should be?</p>
+
+    <p><m>u=</m><answer>-csc(x)-cot(x)</answer></p>
+
+    <p>Rewrite the integral in terms of <m>u</m>:</p>
+
+    <p><m>\displaystyle\int \frac{\csc^2(x)+\csc(x)\cot(x)}{\csc(x)+\cot(x)}\ dx=\int</m><answer>-1/u</answer><m>du=</m><answer>-ln|u|</answer><m>+C</m>.</p>
+
+    <p>In terms of <m>x</m>, this is <answer>-ln|-csc(x)-cot(x)|</answer><m>+C</m></p> 
+  
+  </example>
+
+  <example boxed> <title>Just a note!</title>
+  <p> Depending on the method you use to solve the integral above, you may end up with other versions of the same answer. One easy alternative is to recognize that we can factor a negative to write <m>-\ln|-\csc(x)-\cot(x)|=-\ln|-(\csc(x)+\cot(x))|=-\ln|\csc(x)+\cot(x)|</m>.</p>
+
+    <p>Just be careful. In many situations, your antiderivative and the solution provided by our notes, your friends, AI, etc might be the same functions in disguise. </p>
+    
+  </example>
+
+
+</cascade>
+
+</section>
