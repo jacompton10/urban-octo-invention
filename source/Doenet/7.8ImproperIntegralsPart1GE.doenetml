@@ -1,0 +1,189 @@
+<title>7.8 Improper Integrals (Part 1)</title>
+
+<p>In Calculus, a definite integral calculates the net area between a curve <m>y=f(x)</m> on some interval. </p>
+
+<p>It turns out that for a continuous function <m>f(x)</m> and for a finite interval <m>[a,b]</m> this area is finite and can be calculated using the Fundamental Theorem of Calculus. What happens when a function is <em>discontinuous</em> or the interval has <em>infinite</em> bounds?</p>
+
+<p><em>Tip:</em> You can type <em>infinity</em> to produce the <m>\infty</m> sign. You should also use DNE to mean "Does Not Exist".</p>
+
+<section boxed><title>Example 1</title>
+
+  <cascade>
+
+<p>As good mathematicians, let's only consider one issue at a time:</p>
+    
+<p>Think of the function <m>y=\frac{1}{x}</m> on the interval <m>(0,1]</m>. This function is <em>discontinuous</em> only at <m>x=</m><answer>0</answer>. The interval <m>(0,1]</m> has finite bounds, so the only problem to tackle, for now, is the discontinuity.</p>
+
+    <graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">1/x</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="0.0001 1" function="$f"/>
+    </graph>
+
+<p>You may notice that the area of the shaded region continues to fill this 'gap' between the function and the <m>y</m>-axis. And since the function <m>1/x</m> will <answer inline><choice> eventually</choice>
+<choice credit="1">never</choice></answer> touch the <m>y</m>-axis, this shading continues upwards forever - getting smaller and smaller the further up you travel.</p>
+
+    <p>So the question is: Is the total area of the shading region <em>infinite</em> or <em>finite</em>?</p>
+
+    <example boxed><title>Step 1</title>
+    <p>An approach to answering this problem is to ask how much area there is on an interval that avoids the discontinuity at <m>x=0</m>. For example, <m>f(x) = 1/x</m> is continuous on the interval <m>[0.5,1]</m>, so the integral <m>\displaystyle\int_{0.5}^1 \frac{1}{x}\ dx</m> will be <answer inline><choice credit="1">finite</choice> <choice>infinite</choice></answer>.</p>
+
+      <p>In fact, <m>\displaystyle \int_{0.5}^1 \frac{1}{x}\ dx=</m><answer>- ln(0.5)</answer></p>
+
+      <p>But 0.5 is not very close to 0. We should try something even smaller - say 0.1?</p>      
+
+     <p> <m>\displaystyle \int_{0.1}^1\frac{1}{x}\ dx=</m><answer>- ln(0.1)</answer></p>
+
+     <sideBySide width="45%"><graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">1/x</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="0.5 1" function="$f"/>
+    </graph>
+       
+      <graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">1/x</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="0.1 1" function="$f"/>
+    </graph></sideBySide>
+
+      <setup><number name="t">1</number></setup>
+      <animateFromSequence name="tAnimation" target="$t" from="1" to="0.05" step="-.05" animationInterval='10' animationMode='increase' animationOn="true" />
+
+      <updateValue type="boolean" target="$tAnimation.animationOn" newValue="$tAnimation.animationOn =false">
+  <label>Start/Stop Animation</label>
+</updateValue> 
+
+      <graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">1/x</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="$t 1" function="$f"/>
+                <point x='$t' y='0' ><label>a</label></point>
+
+    </graph>
+
+      <p>In the grand scheme of things, 0.1 is also not very close to 0. It seems the correct approach would be to calculate the area from some very small value <m>a</m> to 1 and the take the limit as <m>a</m> approaches <answer>0</answer> from the <em>right</em>.</p>
+    
+    </example>
+
+    <example boxed><title>Step 2</title>
+    <p>First, let's calculate the area beneath <m>1/x</m> on the interval <m>[a,1]</m> for some small value <m>a</m>:</p>
+  <p><m>\displaystyle \int_a^1\frac{1}{x}\ dx=</m><answer>-ln(a)</answer></p>   
+
+      <p>Then the limit as <m>a</m> tends towards 0 <em>from the right</em> is </p>
+
+      <p><m>\displaystyle\lim_{a\to 0^+}(-\ln(a)) = </m><answer>infinity</answer></p>
+
+      <p>This indicates that the integral <m>\displaystyle \int_0^1\frac{1}{x}\ dx</m> <answer inline><choice>converges</choice><choice credit="1">diverges</choice></answer>.</p>
+      
+    </example>
+
+  </cascade>
+</section>
+
+<section boxed><title>Example 2</title>
+<cascade>
+  <p>It is important to compare the previous example to the area beneath the curve <m>f(x) = \frac{1}{\sqrt{x}}</m> on <m>(0,1]</m>. At first glance, it would seem <m>\int_0^1 \frac{1}{\sqrt{x}}\ dx</m> also diverges. Let's explore.</p>
+
+  <example boxed><title>Step 1</title>
+<p>Following the same procedure, we should find the area beneath <m>f(x) = 1/\sqrt{x}</m> on an interval <m>[a,0]</m> where <m>a</m> is some small number.</p>
+
+    <setup><number name="t2">1</number></setup>
+      <animateFromSequence name="tAnimation2" target="$t2" from="1" to="0.01" step="-.03" animationInterval='1' animationMode='increase' animationOn="true" />
+
+      <updateValue type="boolean" target="$tAnimation2.animationOn" newValue="$tAnimation2.animationOn =false">
+  <label>Start/Stop Animation</label>
+</updateValue> 
+
+      <graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">x^(-1/2)</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="$t2 1" function="$f"/>
+        <point x='$t2' y='0' ><label>a</label></point>
+    </graph>
+    
+
+    <p><m>\displaystyle \int_a^1 \frac{1}{x^{1/2}}\ dx = </m><answer>2-2a^(.5)</answer>.</p>
+       
+  </example>
+
+  <example boxed><title>Step 2</title>
+  <p>Writing this out correctly as we would on a test:</p>
+
+    <p><m>\displaystyle \int_0^1\frac{1}{x^{1/2}}\ dx =\lim_{a\to 0^+} \int_a^1 \frac{1}{x^{1/2}}\ dx = \lim_{a\to 0^+} 2-2a^{.5}=</m><answer>2</answer></p>
+
+    <p>This indicates that the integral <m>\displaystyle \int_0^1\frac{1}{\sqrt{x}}\ dx</m> <answer inline><choice credit='1'>converges</choice><choice>diverges</choice></answer> to <answer>2</answer>.</p>
+  </example>
+</cascade>
+</section>
+
+<section boxed><title>Example 3</title>
+  <cascade>
+  <p>We now have an example of a function with a vertical asymptote where the improper integral diverges and one where it converges. To finish up the exploration, compare the previous examples to the area beneath the curve <m>f(x) = \frac{1}{x^2}</m> on <m>(0,1]</m>. </p>
+
+  <example boxed><title>Step 1</title>
+<p>Following the same procedure, we should find the area beneath <m>f(x) = 1/x^2</m> on an interval <m>[a,0]</m> where <m>a</m> is some small number.</p>
+
+    <setup><number name="t3">1</number></setup>
+      <animateFromSequence name="tAnimation3" target="$t3" from="1" to="0.01" step="-.03" animationInterval='1' animationMode='increase' animationOn="true" />
+
+      <updateValue type="boolean" target="$tAnimation3.animationOn" newValue="$tAnimation3.animationOn =false">
+  <label>Start/Stop Animation</label>
+</updateValue> 
+
+      <graph xMin="-.5" xMax="1.5" yMin="-0.5" yMax ="10" fixed="true" >
+      <function name="f" domain="[0,1]">x^(-2)</function>
+      <regionBetweenCurveXAxis name="regionFill" boundaryValues="$t3 1" function="$f"/>
+        <point x='$t3' y='0' ><label>a</label></point>
+    </graph>
+    
+
+    <p><m>\displaystyle \int_a^1 \frac{1}{x^2}\ dx = </m><answer>-1+1/a</answer>.</p>
+       
+  </example>
+
+  <example boxed><title>Step 2</title>
+  <p>Writing this out correctly as we would on a test:</p>
+
+    <p><m>\displaystyle \int_0^1\frac{1}{x^2}\ dx =\lim_{a\to 0^+} \int_a^1 \frac{1}{x^2}\ dx = \lim_{a\to 0^+} -1+\frac{1}{a}=</m><answer>infinity</answer></p>
+
+    <p>This indicates that the integral <m>\displaystyle \int_0^1\frac{1}{x^2\ dx</m> <answer inline><choice >converges</choice><choice credit='1'>diverges</choice></answer>.</p>
+  </example>
+  </cascade>
+</section>
+
+<section boxed><title>Recap</title>
+  <cascade >
+<p>What we have begun to show here is called the <m>p</m>-test for improper integrals <em>at vertical asymptotes</em>. Summarize the discovery below:</p>
+
+  <p> An integral of the form <m>\int_0^1 \frac{1}{x^p}\ dx</m> will converge if <answer inline>
+    <choice credit='1'><m> p\lt 1</m></choice>
+    <choice><m> p\gt 1</m></choice>
+    <choice> <m>p=1</m></choice>
+    <choice><m>p\leq 1</m></choice>
+    <choice><m>p\geq 1</m></choice>
+  </answer>.</p>
+
+   <p> An integral of the form <m>\int_0^1 \frac{1}{x^p}\ dx</m> will diverge if <answer inline>
+    <choice ><m> p\lt 1</m></choice>
+    <choice><m> p\gt 1</m></choice>
+    <choice> <m>p=1</m></choice>
+    <choice><m>p\leq 1</m></choice>
+    <choice credit='1'><m>p\geq 1</m></choice>
+  </answer>.</p>
+
+  <p>But you should be careful as to when it is appropriate to use this! Which of the following examples is it appropriate to use this version of the <m>p</m>-test?</p>
+
+  <p>A. <m>\int_0^1\frac{1}{(x+2)}\ dx</m></p>
+  <p>B. <m>\int_0^3\frac{1}{(x-3)}\ dx</m></p>
+  <p>C. <m>\int_1^\infty\frac{1}{x}\ dx</m></p>
+  <p>D. <m>\int_{-1}^0\frac{1}{x}\ dx</m></p>
+
+  <p>The integrals above that are appropriate for using the <m>p</m>-test for <em>functions with vertical asymptotes in the bounds</em> are <answer unorderedCompare name='ans1'>B, D</answer>.</p>
+
+  <conditionalContent condition="$ans1.creditAchieved = 1">
+  <p>Nice! That's right because both of these functions have a discontinuity within the bounds of integration! </p>
+</conditionalContent>
+
+  <p>The integrals above that are NOT appropriate for using the <m>p</m>-test for <em>functions with vertical asymptotes on the interval</em> are <answer unorderedCompare name='ans2'>A, C</answer>.</p>
+
+  <conditionalContent condition="$ans2.creditAchieved = 1">
+  <p>Perfect! Even though both of the functions in A and C have vertical asymptotes, they do not occur within the bounds of integration. You may notice that A is not improper at all, but C is still improper due to the upper bound being <m>\infty</m>. </p>
+</conditionalContent>
+  </cascade>
+
+</section>
